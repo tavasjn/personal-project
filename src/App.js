@@ -1,11 +1,22 @@
 import React from 'react';
+// Import Our Routes //
+import { HashRouter } from 'react-router-dom';
+import routes from './routes';
+
+// Redux Files Here //
+import store from './ducks/store';
+
+
+// Styling File //
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <HashRouter>
+      <div className="App">
+        {routes}
+      </div>
+    </HashRouter>
   );
 }
 
