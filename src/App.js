@@ -5,6 +5,7 @@ import routes from './routes';
 
 // Redux Files Here //
 import store from './ducks/store';
+import {Provider} from 'react-redux';
 
 
 // Styling File //
@@ -12,11 +13,13 @@ import './App.css';
 
 function App() {
   return (
-    <HashRouter>
-      <div className="App">
-        {routes}
-      </div>
-    </HashRouter>
+    <Provider store={store}>
+      <HashRouter>
+        <div className="App">
+          {routes}
+        </div>
+      </HashRouter>
+    </Provider>
   );
 }
 

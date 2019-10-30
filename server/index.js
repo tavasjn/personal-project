@@ -2,7 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
-// const mainCtrl = require('./controller/mainController');
+const mainCtrl = require('./controller/mainController');
+const newDogCtrl = require('./controller/newDogController');
 
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
 const app = express();
@@ -26,6 +27,13 @@ app.use(session({
 }));
 
 // Main CTRL EndPoints Below //
+app.post('/api/login', mainCtrl.login);
+app.post('/api/register', mainCtrl.register);
+app.post('/api/logout', mainCtrl.logout);
+
+// CTRL for adding Dogs //
+app.get('/api/dogs', newDogCtrl.getDogs);
+app.post('/api/newdog', newDogCtrl.newDog);
 
 
 
