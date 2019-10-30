@@ -47,6 +47,8 @@ module.exports = {
             password: hash
         });
         newUser = newUser[0];
+        req.session.user = newUser;
+        return res.send(req.session.user)
     },
 
     logout: (req, res) => {
