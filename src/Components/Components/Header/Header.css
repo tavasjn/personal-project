@@ -1,0 +1,14 @@
+.nav-bar{
+    height: 10vh;
+    width: 100vw;
+    background-color: #3F3F3F;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-buttons{
+    border: solid black 1px;
+    border-radius: 2px;
+    background-color: #B70000;
+}
