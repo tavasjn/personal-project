@@ -23,6 +23,5 @@ module.exports = {
         const { breed, size, indoor_outdoor, hunting, playful, hypoallergenic, fur_type, description, image } = req.body;
 
         db.add_to_account([breed, size, indoor_outdoor, hunting, playful, hypoallergenic, fur_type, description, image]).then(data => res.status(200).send(data))
-
     }
 }

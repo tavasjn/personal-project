@@ -1,7 +1,31 @@
 import React, { Component } from 'react';
 import './Dogs.css';
+import axios from 'axios';
 
 class Dogs extends Component {
+    
+    constructor(){
+        super();
+
+        this.state = {
+            myDogs: []
+        }
+    }
+
+    componentDidMount() {
+
+    }
+
+
+    addToAccount = () => {
+        let {breed, image, size, hypoallergenic} = this.props;
+        axios.post('/api/addtoaccount', {breed, image, size, hypoallergenic}).then(res => this.setState({
+            myDogs: res.data
+        }))
+            .catch(err => console.log('add to account broke', err));
+    }
+
+
 
     render() {
         let { dogs } = this.props;
