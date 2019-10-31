@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Register.css';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {updateUser} from '../../../ducks/reducer';
 import axios from 'axios';

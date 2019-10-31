@@ -10,6 +10,7 @@ import Login from './Components/Components/Login/Login';
 import Quiz from './Components/Components/Quiz/Quiz';
 import QuizResults from './Components/Components/QuizResults/QuizResults';
 import Register from './Components/Components/Register/Register';
+import AllDogs from './Components/Components/AllDogs/AllDogs';
 
 // The Export Route of each Component //
 export default (
@@ -21,5 +22,6 @@ export default (
         <Route path='/finddog' component={FindDog}/>
         <Route path='/quiz' component={Quiz}/>
         <Route path='/quizresults' component={QuizResults}/>
+        <Route path='/alldogs' component={AllDogs}/>
     </Switch>
 )

@@ -36,7 +36,7 @@ export default function reducer(state = initialState, action){
     const {type, payload} = action;
     switch(type){
         case UPDATE_USER:
-            return {...state, user: payload, user: {signedIn: true}}
+            return {...state, user: {payload, signedIn: true}}
         case LOGOUT:
             return {...state, user: {signedIn: false}}
         case LOGIN:
