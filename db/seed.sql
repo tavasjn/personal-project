@@ -14,7 +14,7 @@ create table dogs (
     hypoallergenic boolean,
     fur_type text,
     description text,
-    image varchar(350)
+    image text
 );
 
 create table results (
@@ -24,4 +24,10 @@ create table results (
     dog_id_1 integer,
     dog_id_2 integer,
     dog_id_3 integer
+);
+
+create table users_dogs (
+    users_dogs_id serial primary key,
+    user_id integer,
+    dogs_id integer
 );

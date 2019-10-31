@@ -34,6 +34,7 @@ app.post('/api/logout', mainCtrl.logout);
 // CTRL for adding Dogs //
 app.get('/api/dogs', newDogCtrl.getDogs);
 app.post('/api/newdog', newDogCtrl.newDog);
+app.post('/api/addtoaccount', newDogCtrl.addToAccount);
 
 
 
