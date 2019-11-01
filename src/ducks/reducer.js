@@ -11,6 +11,15 @@ const initialState = {
 const UPDATE_USER = 'UPDATE_USER';
 const LOGOUT = 'LOGOUT';
 const LOGIN = 'LOGIN';
+const ADDDOG = 'ADDDOG';
+
+export function addDog(dogsId){
+
+    return {
+        type: ADDDOG,
+        payload: dogsId
+    }
+}
 
 
 export function updateUser(userObj){

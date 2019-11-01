@@ -3,14 +3,6 @@ import './Dogs.css';
 import axios from 'axios';
 
 class Dogs extends Component {
-    
-    constructor(){
-        super();
-
-        this.state = {
-            myDogs: []
-        }
-    }
 
     componentDidMount() {
 

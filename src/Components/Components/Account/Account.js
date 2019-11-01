@@ -1,12 +1,28 @@
 import React, {Component} from 'react';
+import './Account.css';
 import Header from '../Header/Header';
 
 class Account extends Component {
+
+    componentDidMount() {
+
+    }
+
+
+
     render(){
         return(
             <div>
                 <Header />
-                Account
+                <div>
+                    Your Saved Dogs Below
+                </div>
+                <div className='account-page'>
+                    Saved Dogs Here...
+                    <div className='dog-box'>
+
+                    </div>
+                </div>
             </div>
         )
     }
