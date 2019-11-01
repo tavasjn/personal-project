@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header';
 
-class Quiz extends Component {
+class FindDog extends Component {
     render(){
         return(
             <div>
                 <Header />
-                Quiz
+                FindDog
             </div>
         )
     }
 }
 
-export default Quiz;
+export default FindDog;

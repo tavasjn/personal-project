@@ -18,11 +18,7 @@ class Dogs extends Component {
 
 
     addToAccount = () => {
-        let {breed, image, size, hypoallergenic} = this.props;
-        axios.post('/api/addtoaccount', {breed, image, size, hypoallergenic}).then(res => this.setState({
-            myDogs: res.data
-        }))
-            .catch(err => console.log('add to account broke', err));
+        axios.post('/api/addtoaccount')
     }
 
 

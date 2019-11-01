@@ -3,7 +3,9 @@ const initialState = {
         username: '',
         userId: 0,
         signedIn: false
-    }
+    },
+    dogs: [],
+    myDogs: []
 }
 
 const UPDATE_USER = 'UPDATE_USER';
