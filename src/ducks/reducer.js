@@ -17,67 +17,71 @@ const GETDOGS = 'GETDOGS';
 
 
 
-export function getDogs(){
+export function getDogs() {
     // console.log('hit')
-    let dogs= axios.get('/api/dogs').then(res =>  res.data)
+    let dogs = axios.get('/api/dogs').then(res => res.data)
 
-    return{
+    return {
         type: GETDOGS,
         payload: dogs
     }
 }
 
-export function addDog(myDogs){
+export function addDog(myDogs, index) {
     // map over dogs to find matching dog id //
     console.log(myDogs)
-    let dog = this.state.dogs.map((element, index) => {
-        if(element.id === +myDogs){
-            return element
-        }
-    })
+    console.log('hit')
+    
     // send dog on payload //
     // use payload to push to myDogs []; //
     return {
         type: ADDDOG,
-        payload: dog
+        payload: {myDogs, index}
     }
 }
 
 
-export function updateUser(userObj){
+export function updateUser(userObj) {
     return {
         type: UPDATE_USER,
         payload: userObj
     }
 }
 
-export function logout(){
+export function logout() {
     return {
         type: LOGOUT,
         payload: null
     }
 }
 
-export function login(){
+export function login() {
     return {
         type: LOGIN,
-        payload: null 
+        payload: null
     }
 }
 
-export default function reducer(state = initialState, action){
-    const {type, payload} = action;
-    switch(type){
+export default function reducer(state = initialState, action) {
+    const { type, payload } = action;
+    switch (type) {
         case UPDATE_USER:
-            return {...state, user: {payload, signedIn: true}}
+            return { ...state, user: { payload, signedIn: true } }
         case LOGOUT:
-            return {...state, user: {signedIn: false}}
+            return { ...state, user: { signedIn: false } }
         case LOGIN:
-            return {...state, user: {signedIn: true}}
+            return { ...state, user: { signedIn: true } }
         case ADDDOG:
-            return {...state, myDogs: [...state.myDogs, payload]}
+            console.log(payload)
+            let dog = state.dogs.map((element, index) => {
+                if (element.dogs_id === +payload.myDogs) {
+                    return element
+                }
+            })
+            console.log(dog[payload.index])
+            return { ...state, myDogs: [...state.myDogs, dog[payload.index]] }
         case GETDOGS + '_FULFILLED':
-            return {...state, dogs: payload}
+            return { ...state, dogs: payload }
         default:
             return state;
     }

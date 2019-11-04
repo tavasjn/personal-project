@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Dogs.css';
 // import axios from 'axios';
-import {connect} from 'react-redux';
-import {addDog} from '../../../ducks/reducer';
+import { connect } from 'react-redux';
+import { addDog } from '../../../ducks/reducer';
 
 
 
@@ -18,9 +18,9 @@ class Dogs extends Component {
     // make another function that adds dog to redux
     render() {
         let { dogs } = this.props;
-        // console.log(addDog)
-        console.log(this.props)
-        console.log(this.props.myDogs)
+        // console.log(dogs)
+        // console.log(this.props)
+        console.log(this.props.redux.myDogs)
         return (
             <div>
                 <div className='dog-box'>
@@ -28,7 +28,7 @@ class Dogs extends Component {
                     <img src={dogs.image} alt='' className='dog-image' />
                     <div>Size: {dogs.size}</div>
                     {dogs.hypoallergenic ? (<div>Hypoallergenic: Yes</div>) : (<div>Hypoallergenic: No</div>)}
-                    <div>Add to the list: <button onClick={this.props.redux.addDog}>Add</button></div>
+                    <div>Add to the list: <button onClick={(e) => this.props.addDog(dogs.dogs_id, this.props.index)}>Add</button></div>
                 </div>
             </div>
         )
