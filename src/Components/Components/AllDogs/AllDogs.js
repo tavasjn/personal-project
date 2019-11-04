@@ -4,30 +4,30 @@ import Dogs from '../Dogs/Dogs';
 import './AllDogs.css';
 
 // need axios and will need store as well //
-import axios from 'axios';
+// import axios from 'axios';
+// Going to place all functions on the reducer instead //
+
+import { connect } from 'react-redux';
+import { getDogs } from '../../../ducks/reducer';
+
+
 import Header from '../Header/Header';
 
 
 class AllDogs extends Component {
-
-    constructor() {
-        super();
-
-        this.state = {
-            dogs: []
-        }
-    }
-
-    componentDidMount = () => {
-        axios.get('/api/dogs').then(res => this.setState({
-            dogs: res.data
-        }))
-            .catch(err => console.log('Get dogs is not working', err))
+    // move function to redux and delete state
+    componentDidMount() {
+        this.props.getDogs()
     }
 
 
     render() {
-        let { dogs } = this.state;
+        // console.log(this.props.redux.dogs)
+        // We have to do this to store everything on redux //
+        // If we use hooks in the future we dont have to worry about store and reducer//
+        // Much prefer Hooks but would like to demonstrate the use of redux //
+        let { dogs } = this.props.redux;
+        // console.log(this.props.dogs)
         return (
             <div>
                 <Header />
@@ -47,4 +47,14 @@ class AllDogs extends Component {
     }
 }
 
-export default AllDogs;
+const mapStateToProps = state => {
+    return {
+        redux: state
+    }
+}
+
+const mapDispatchToProps = {
+    getDogs
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AllDogs);

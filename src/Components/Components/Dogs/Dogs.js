@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import './Dogs.css';
-import axios from 'axios';
+// import axios from 'axios';
+import {connect} from 'react-redux';
+import {addDog} from '../../../ducks/reducer';
+
+
+
 
 class Dogs extends Component {
 
@@ -9,14 +14,13 @@ class Dogs extends Component {
     }
 
 
-    addToAccount = () => {
-        axios.post('/api/addtoaccount')
-    }
 
-
-
+    // make another function that adds dog to redux
     render() {
         let { dogs } = this.props;
+        // console.log(addDog)
+        console.log(this.props)
+        console.log(this.props.myDogs)
         return (
             <div>
                 <div className='dog-box'>
@@ -24,11 +28,21 @@ class Dogs extends Component {
                     <img src={dogs.image} alt='' className='dog-image' />
                     <div>Size: {dogs.size}</div>
                     {dogs.hypoallergenic ? (<div>Hypoallergenic: Yes</div>) : (<div>Hypoallergenic: No</div>)}
-                    <div>Add to the list: <button>Add</button></div>
+                    <div>Add to the list: <button onClick={this.props.redux.addDog}>Add</button></div>
                 </div>
             </div>
         )
     }
 }
 
-export default Dogs;
+const mapStateToProps = state => {
+    return {
+        redux: state
+    }
+}
+
+const mapDispatchToProps = {
+    addDog
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dogs);

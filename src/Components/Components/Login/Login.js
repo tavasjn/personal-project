@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {updateUser} from '../../../ducks/reducer';
-import {login} from '../../../ducks/reducer';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { updateUser } from '../../../ducks/reducer';
+import { login } from '../../../ducks/reducer';
 import './Login.css';
 
 class Login extends Component {
 
-    constructor(){
+    constructor() {
         super();
 
         this.state = {
@@ -23,7 +23,7 @@ class Login extends Component {
 
     handleLogin = () => {
         console.log('hit')
-        axios.post('/api/login', {username: this.state.username, password: this.state.password}).then(res => {
+        axios.post('/api/login', { username: this.state.username, password: this.state.password }).then(res => {
             this.props.updateUser(res.data)
             this.props.history.push('/home')
             this.setState({
@@ -41,8 +41,8 @@ class Login extends Component {
     }
 
 
-    render(){
-        return(
+    render() {
+        return (
             <div className='login-page'>
                 <div className='about-box'>
                     This is TITLEHERE and we want to help you find the right dog for you and your needs!
@@ -50,18 +50,18 @@ class Login extends Component {
                 <div className='auth-box'>
                     <div>
                         UserName:
-                        <input 
+                        <input
                             value={this.state.username}
                             name='username'
-                            onChange={(e) => this.handleInput(e)}/>
+                            onChange={(e) => this.handleInput(e)} />
                     </div>
                     <div>
                         Password:
-                        <input 
+                        <input
                             value={this.state.password}
                             type='password'
                             name='password'
-                            onChange={(e) => this.handleInput(e)}/>
+                            onChange={(e) => this.handleInput(e)} />
                     </div>
                 </div>
                 <div className='buttons'>
@@ -78,7 +78,7 @@ class Login extends Component {
 }
 
 const mapStateToProps = reduxState => {
-    const {user} = reduxState;
+    const { user } = reduxState;
     return {
         user
     }

@@ -8,7 +8,7 @@ class Account extends Component {
 
     }
 
-
+    // us a axios.get to get my dogs from redux
 
     render(){
         return(

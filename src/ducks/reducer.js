@@ -1,3 +1,4 @@
+import axios from 'axios';
 const initialState = {
     user: {
         username: '',
@@ -12,12 +13,33 @@ const UPDATE_USER = 'UPDATE_USER';
 const LOGOUT = 'LOGOUT';
 const LOGIN = 'LOGIN';
 const ADDDOG = 'ADDDOG';
+const GETDOGS = 'GETDOGS';
 
-export function addDog(dogsId){
 
+
+export function getDogs(){
+    // console.log('hit')
+    let dogs= axios.get('/api/dogs').then(res =>  res.data)
+
+    return{
+        type: GETDOGS,
+        payload: dogs
+    }
+}
+
+export function addDog(myDogs){
+    // map over dogs to find matching dog id //
+    console.log(myDogs)
+    let dog = this.state.dogs.map((element, index) => {
+        if(element.id === +myDogs){
+            return element
+        }
+    })
+    // send dog on payload //
+    // use payload to push to myDogs []; //
     return {
         type: ADDDOG,
-        payload: dogsId
+        payload: dog
     }
 }
 
@@ -52,6 +74,10 @@ export default function reducer(state = initialState, action){
             return {...state, user: {signedIn: false}}
         case LOGIN:
             return {...state, user: {signedIn: true}}
+        case ADDDOG:
+            return {...state, myDogs: [...state.myDogs, payload]}
+        case GETDOGS + '_FULFILLED':
+            return {...state, dogs: payload}
         default:
             return state;
     }
