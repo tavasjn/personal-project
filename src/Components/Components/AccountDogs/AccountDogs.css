@@ -1,0 +1,11 @@
+.dog-box{
+    height: 40vh;
+    width: 50vw;
+    border: solid black 2px;
+    margin-top: 7%;
+}
+
+.dog-image{
+    width: 50vw;
+    height: 25vh;
+}
