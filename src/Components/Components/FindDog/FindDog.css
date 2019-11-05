@@ -1,19 +1,34 @@
-.find-dog-page{
-    height: 40vh;
-    width: 50vw;
-    border: solid black 2px;
-    margin-top: 7%;
-}
 
-.dog-page{
+.findDog-page{
+    color: #86c232;
+    height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+}
+
+.find-dog-page{
+    height: 35vh;
+    width: 50vw;
+    border: solid black 2px;
+    /* margin-top: 7%; */
 }
 
 .find-dog-buttons{
     width: 100vw;
     display: flex;
     justify-content: space-evenly;
+
+}
+
+.quiz-button {
+    border-radius: 5px;
+    border: none;
+    background-color: #86c232;
+    padding: 10px 15px;
+}
+
+body {
+    background-color: #222629;
 }

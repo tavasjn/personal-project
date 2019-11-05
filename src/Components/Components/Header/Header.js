@@ -11,16 +11,16 @@ class Header extends Component {
         return (
             <div className='nav-bar'>
                 <div className='nav-buttons'>
-                    <Link to='/home'>Title</Link>
+                    <Link to='/home'><button>Title</button></Link>
                 </div>
                 <div className='nav-buttons'>
-                    <Link to='/account'>My Account</Link>
+                    <Link to='/account'><button>My Account</button></Link>
                 </div>
                 <div className='nav-buttons'>
-                    <Link to='/finddog'>Find a Dog</Link>
+                    <Link to='/finddog'><button>Find a Dog</button></Link>
                 </div>
                 <div className='nav-buttons'>
-                    <Link to='/alldogs'>Explore All Dogs</Link>
+                    <Link to='/alldogs'><button>Explore All Dogs</button></Link>
                 </div>
             </div>
         )

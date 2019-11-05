@@ -28,7 +28,7 @@ class Dogs extends Component {
                     <img src={dogs.image} alt='' className='dog-image' />
                     <div>Size: {dogs.size}</div>
                     {dogs.hypoallergenic ? (<div>Hypoallergenic: Yes</div>) : (<div>Hypoallergenic: No</div>)}
-                    <div>Add to the list: <button onClick={(e) => this.props.addDog(dogs.dogs_id, this.props.index)}>Add</button></div>
+                    <div>Add to the list: <button onClick={(e) => this.props.addDog(dogs.dogs_id, this.props.index)} className='add-button'>Add</button></div>
                 </div>
             </div>
         )
