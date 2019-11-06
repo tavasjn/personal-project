@@ -24,7 +24,7 @@ class FindDog extends Component {
                         </div>
                     </div>
                     <div className='question-box'>
-                        <div className='question'>A Dog that is good for hunting?</div>
+                        <div className='question'>Indoor dog?</div>
                         <div className='quiz-page-spreading'>
                             <button className='quiz-buttons'>Yes!</button>
                             <button className='quiz-buttons'>No!</button>

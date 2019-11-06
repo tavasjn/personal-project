@@ -40,7 +40,8 @@ class AllDogs extends Component {
                     <div>
                         {dogs.map((dogs, index) => (
                             <Dogs dogs={dogs}
-                                index={index} />
+                                index={index} 
+                                key={`dogs ${index}`}/>
                         ))}
                     </div>
                 </div>

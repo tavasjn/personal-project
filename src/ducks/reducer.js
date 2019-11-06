@@ -84,7 +84,7 @@ export default function reducer(state = initialState, action) {
             return { ...state, user: { signedIn: true } }
         case ADDDOG:
             // console.log(payload)
-            let dog = state.dogs.map((element, index) => {
+            let dog = state.dogs.map((element) => {
                 if (element.dogs_id === +payload.myDogs) {
                     return element
                 }
