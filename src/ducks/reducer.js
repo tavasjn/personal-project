@@ -29,7 +29,7 @@ export function getDogs() {
 }
 
 export function accountDogs() {
-    console.log('hit')
+    // console.log('hit')
     let myDogs = axios.get('/api/dogs').then(res => res.data)
 
     return {
@@ -40,8 +40,8 @@ export function accountDogs() {
 
 export function addDog(myDogs, index) {
     // map over dogs to find matching dog id //
-    console.log(myDogs)
-    console.log('hit')
+    // console.log(myDogs)
+    // console.log('hit')
 
     // send dog on payload //
     // use payload to push to myDogs []; //
@@ -83,13 +83,13 @@ export default function reducer(state = initialState, action) {
         case LOGIN:
             return { ...state, user: { signedIn: true } }
         case ADDDOG:
-            console.log(payload)
+            // console.log(payload)
             let dog = state.dogs.map((element, index) => {
                 if (element.dogs_id === +payload.myDogs) {
                     return element
                 }
             })
-            console.log(dog[payload.index])
+            // console.log(dog[payload.index])
             return { ...state, myDogs: [...state.myDogs, dog[payload.index]] }
         case GETDOGS + '_FULFILLED':
             return { ...state, dogs: payload }

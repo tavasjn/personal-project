@@ -16,6 +16,8 @@ import Header from '../Header/Header';
 
 class AllDogs extends Component {
     // move function to redux and delete state
+
+    
     componentDidMount() {
         this.props.getDogs()
     }

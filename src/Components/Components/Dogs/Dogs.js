@@ -20,7 +20,7 @@ class Dogs extends Component {
         let { dogs } = this.props;
         // console.log(dogs)
         // console.log(this.props)
-        console.log(this.props.redux.myDogs)
+        // console.log(this.props.redux.myDogs)
         return (
             <div>
                 <div className='dog-box'>

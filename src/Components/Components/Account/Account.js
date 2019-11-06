@@ -33,17 +33,20 @@ class Account extends Component {
         return (
             <div>
                 <Header />
-                <div>
-                    Your Saved Dogs Below
-                </div>
                 <div className='account-page'>
                     <div>
-                        {myDogs.map((myDogs, index) => (
-                            <AccountDogs 
-                                myDogs={myDogs}
-                                index={index}/>
-                        ))}
+                        Your Saved Dogs Below
                     </div>
+                    <div>
+                        <div>
+                            {myDogs.map((myDogs, index) => (
+                                <AccountDogs
+                                    myDogs={myDogs}
+                                    index={index} />
+                            ))}
+                        </div>
+                    </div>
+
                 </div>
             </div>
         )
