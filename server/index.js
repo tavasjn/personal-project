@@ -2,11 +2,18 @@ require('dotenv').config();
 const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
+
+
+// these are the imports for my controllers //
 const mainCtrl = require('./controller/mainController');
 const newDogCtrl = require('./controller/newDogController');
+const adminCtrl = require('./controller/adminController');
 
+
+// connect the server using heroku // 
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
 const app = express();
+
 
 app.use(express.json());
 
@@ -35,6 +42,10 @@ app.post('/api/logout', mainCtrl.logout);
 app.get('/api/dogs', newDogCtrl.getDogs);
 app.post('/api/newdog', newDogCtrl.newDog);
 app.post('/api/addtoaccount', newDogCtrl.addToAccount);
+
+// Admin side to edit and delete dogs //
+app.delete('/api/deletedog/:id', adminCtrl.deleteDog);
+
 
 
 

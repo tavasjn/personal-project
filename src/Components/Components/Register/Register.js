@@ -5,6 +5,8 @@ import {connect} from 'react-redux';
 import {updateUser} from '../../../ducks/reducer';
 import axios from 'axios';
 
+
+
 class Register extends Component {
 
     constructor(){
@@ -61,7 +63,7 @@ class Register extends Component {
                     </div>
                 </div>
                 <div>
-                    <button onClick={this.handleRegister}>Register</button>
+                    <button onClick={this.handleRegister} className='register-buttons'>Register</button>
                 </div>
             </div>
         )

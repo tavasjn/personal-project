@@ -10,17 +10,17 @@ class Header extends Component {
     render() {
         return (
             <div className='nav-bar'>
-                <div className='nav-buttons'>
-                    <Link to='/home'><button>Title</button></Link>
+                <div>
+                    <Link to='/home'><button className='nav-buttons'>Title</button></Link>
                 </div>
-                <div className='nav-buttons'>
-                    <Link to='/account'><button>My Account</button></Link>
+                <div>
+                    <Link to='/account'><button className='nav-buttons'>My Account</button></Link>
                 </div>
-                <div className='nav-buttons'>
-                    <Link to='/finddog'><button>Find a Dog</button></Link>
+                <div>
+                    <Link to='/finddog'><button className='nav-buttons'>Find a Dog</button></Link>
                 </div>
-                <div className='nav-buttons'>
-                    <Link to='/alldogs'><button>Explore All Dogs</button></Link>
+                <div>
+                    <Link to='/alldogs'><button className='nav-buttons'>Explore All Dogs</button></Link>
                 </div>
             </div>
         )

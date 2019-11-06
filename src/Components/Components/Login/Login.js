@@ -65,11 +65,11 @@ class Login extends Component {
                     </div>
                 </div>
                 <div className='buttons'>
-                    <div className='login-button'>
-                        <button onClick={this.handleLogin}>Login</button>
+                    <div>
+                        <button onClick={this.handleLogin} className='register-buttons'>Login</button>
                     </div>
-                    <div className='login-button'>
-                        <Link to='/register'><button>Register</button></Link>
+                    <div>
+                        <Link to='/register'><button className='register-buttons'>Register</button></Link>
                     </div>
                 </div>
             </div>
