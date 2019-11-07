@@ -9,6 +9,8 @@ const initialState = {
     myDogs: []
 }
 
+console.log(initialState.user)
+
 const UPDATE_USER = 'UPDATE_USER';
 const LOGOUT = 'LOGOUT';
 const LOGIN = 'LOGIN';
