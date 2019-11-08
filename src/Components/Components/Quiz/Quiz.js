@@ -19,39 +19,39 @@ class FindDog extends Component {
                     <div className='question-box'>
                         <div className='question'>A Dog that is good for hunting?</div>
                         <div className='quiz-page-spreading'>
-                            <button className='quiz-buttons'>Yes!</button>
-                            <button className='quiz-buttons'>No!</button>
+                            <button className='quiz-buttons' value={'yes'}>Yes!</button>
+                            <button className='quiz-buttons' value={'no'}>No!</button>
                         </div>
                     </div>
                     <div className='question-box'>
                         <div className='question'>Indoor dog?</div>
                         <div className='quiz-page-spreading'>
-                            <button className='quiz-buttons'>Yes!</button>
-                            <button className='quiz-buttons'>No!</button>
+                            <button className='quiz-buttons' value={'yes'}>Yes!</button>
+                            <button className='quiz-buttons' value={'no'}>No!</button>
                         </div>
                     </div>
                     <div className='question-box'>
                         <div className='question'>Soft fur?</div>
                         <div className='quiz-page-spreading'>
-                            <button className='quiz-buttons'>Yes!</button>
-                            <button className='quiz-buttons'>No!</button>
+                            <button className='quiz-buttons' value={'yes'}>Yes!</button>
+                            <button className='quiz-buttons' value={'no'}>No!</button>
                         </div>
                     </div>
                     <div className='question-box'>
                         <div className='question'>Hyoallergenic?</div>
                         <div className='quiz-page-spreading'>
-                            <button className='quiz-buttons'>Yes!</button>
-                            <button className='quiz-buttons'>No!</button>
+                            <button className='quiz-buttons' value={'yes'}>Yes!</button>
+                            <button className='quiz-buttons' value={'no'}>No!</button>
                         </div>
                     </div>
                     <div className='question-box-size'>
                         <div className='question-size'>What size dog are you looking for?</div>
                         <div className='quiz-page-spreading-size'>
-                            <button className='quiz-buttons-size'>Small</button>
-                            <button className='quiz-buttons-size'>Small-Medium</button>
-                            <button className='quiz-buttons-size'>Medium</button>
-                            <button className='quiz-buttons-size'>Medium-Large</button>
-                            <button className='quiz-buttons-size'>Large</button>
+                            <button className='quiz-buttons-size' value={'small'}>Small</button>
+                            <button className='quiz-buttons-size' value={'small-medium'}>Small-Medium</button>
+                            <button className='quiz-buttons-size' value={'medium'}>Medium</button>
+                            <button className='quiz-buttons-size' value={'medium-large'}>Medium-Large</button>
+                            <button className='quiz-buttons-size' value={'large'}>Large</button>
                         </div>
                     </div>
                     <div>

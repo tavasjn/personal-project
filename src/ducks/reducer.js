@@ -6,10 +6,11 @@ const initialState = {
         signedIn: false
     },
     dogs: [],
-    myDogs: []
+    myDogs: [],
+    sortedDogs: []
 }
 
-console.log(initialState.user)
+// console.log(initialState.user)
 
 const UPDATE_USER = 'UPDATE_USER';
 const LOGOUT = 'LOGOUT';

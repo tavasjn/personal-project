@@ -6,7 +6,7 @@ const iris = require('../iris.json');
 module.exports = {
     async runModel(req, res){
         let{
-            
+            dogs,
         }
     }
 }
