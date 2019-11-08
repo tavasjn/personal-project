@@ -1,4 +1,6 @@
 import axios from 'axios';
+
+
 const initialState = {
     user: {
         username: '',
@@ -18,6 +20,21 @@ const LOGIN = 'LOGIN';
 const ADDDOG = 'ADDDOG';
 const GETDOGS = 'GETDOGS';
 const ACCOUNTDOGS = 'ACCOUNTDOGS';
+
+
+
+export function runModel(
+    // pass in dogs this.props.dogs
+    quizResults
+) {
+    let data = axios.post('/api/run', {
+        quizResults
+    }).then(res => res.data)
+    return {
+        type: RUN_MODEL,
+        payload: data
+    }
+}
 
 
 
@@ -98,6 +115,8 @@ export default function reducer(state = initialState, action) {
             return { ...state, dogs: payload }
         case ACCOUNTDOGS:
             return {...state, myDogs: payload}
+        case RUN_MODEL + '_FULFILLED':
+            return {...state, result: [payload]}
         default:
             return state;
     }

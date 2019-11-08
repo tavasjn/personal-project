@@ -8,6 +8,7 @@ const session = require('express-session');
 const mainCtrl = require('./controller/mainController');
 const newDogCtrl = require('./controller/newDogController');
 const adminCtrl = require('./controller/adminController');
+const tensor = require('./tensor');
 
 
 // connect the server using heroku // 
@@ -45,6 +46,11 @@ app.post('/api/addtoaccount', newDogCtrl.addToAccount);
 
 // Admin side to edit and delete dogs //
 app.delete('/api/deletedog/:id', adminCtrl.deleteDog);
+
+
+// Data endpoints for tensor flow // 
+
+app.post('/api/run', tensor.runModel);
 
 
 

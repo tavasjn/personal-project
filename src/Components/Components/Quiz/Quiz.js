@@ -11,6 +11,21 @@ import Header from '../Header/Header';
 
 
 class FindDog extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            results:
+            {
+                "indoorDog": 0,
+                "size": 0,
+                "hunting": 0,
+                "playful": 0,
+                "hypoallergenic": 0,
+                "fur_type": 0
+            }
+        }
+    }
     render() {
         return (
             <div>
@@ -44,6 +59,7 @@ class FindDog extends Component {
                             <button className='quiz-buttons' value={'no'}>No!</button>
                         </div>
                     </div>
+                    // add playful quiz question //
                     <div className='question-box-size'>
                         <div className='question-size'>What size dog are you looking for?</div>
                         <div className='quiz-page-spreading-size'>
