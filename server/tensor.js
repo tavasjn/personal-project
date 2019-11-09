@@ -19,6 +19,7 @@ module.exports = {
         // at 20 tests for 20 objects we get 400 tests //
         // hopefully giving us the most accurate output //
         // convert/setup our data
+        // console.log(training.indoorDog)
         const trainingData = tf.tensor2d(training.map(item => [
             item.indoorDog, item.size, item.hunting, item.playful, item.hypoallergenic, item.fur_type,
         ]))
@@ -44,9 +45,9 @@ module.exports = {
             item.breed === "Border Collie" ? 1 : 0,
             item.breed === "Boston Terrier" ? 1 : 0,
         ]))
-        console.log(results)
+        // console.log(results)
         const testingData = tf.tensor2d(results.map(item => [
-            item.indoorDog, item.size, item.hunting, item.playful, item.hypoallergenic, item.fur_type, console.log(item)
+            item.indoorDog, item.size, item.hunting, item.playful, item.hypoallergenic, item.fur_type,
         ]))
 
         // build neural network
