@@ -1,13 +1,15 @@
 const tf = require('@tensorflow/tfjs');
 require('@tensorflow/tfjs-node');
-const training = require('../trainingData.json');
+const training = require('./trainingData.json');
+const trainingPractice = require('./trainingData.json');
 
 
 module.exports = {
     runModel: async (req, res) => {
         let {
-            quizResults
+            results
         } = req.body
+        // console.log(req.body.results)
         // Connect Data base //
         const db = req.app.get('db')
         // set the empty array to use //
@@ -42,8 +44,9 @@ module.exports = {
             item.breed === "Border Collie" ? 1 : 0,
             item.breed === "Boston Terrier" ? 1 : 0,
         ]))
-        const testingData = tf.tensor2d(quizResults.map(item => [
-            item.indoorDog, item.size, item.hunting, item.playful, item.hypoallergenic, item.fur_type,
+        console.log(results)
+        const testingData = tf.tensor2d(results.map(item => [
+            item.indoorDog, item.size, item.hunting, item.playful, item.hypoallergenic, item.fur_type, console.log(item)
         ]))
 
         // build neural network
@@ -67,9 +70,9 @@ module.exports = {
         const startTime = Date.now()
         model.fit(trainingData, outputData, { epochs: 100 })
             .then((history) => {
-                
                 console.log("DONE!", Date.now() - startTime)
                 model.predict(testingData).print()
+                res.sendStatus(200);
             })
         // test network
     }

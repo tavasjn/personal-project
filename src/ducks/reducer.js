@@ -20,7 +20,7 @@ const LOGIN = 'LOGIN';
 const ADDDOG = 'ADDDOG';
 const GETDOGS = 'GETDOGS';
 const ACCOUNTDOGS = 'ACCOUNTDOGS';
-
+const RUN_MODEL = 'RUN_MODEL';
 
 
 export function runModel(
