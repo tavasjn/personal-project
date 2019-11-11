@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './FindDog.css';
 import Header from '../Header/Header';
 
-class Quiz extends Component {
+class FindDog extends Component {
     render() {
         return (
             <div>
@@ -15,7 +15,7 @@ class Quiz extends Component {
                     </div>
                     <div className='find-dog-buttons'>
                         <div>
-                            <Link to='/quiz'><button className='quiz-button'>Take the Survey</button></Link>
+                            <Link to='/quiz/step-one'><button className='quiz-button'>Take the Survey</button></Link>
                         </div>
                         <div>
                             <Link to='/home'><button className='quiz-button'>Cancel</button></Link>
@@ -27,4 +27,4 @@ class Quiz extends Component {
     }
 }
 
-export default Quiz;
+export default FindDog;
