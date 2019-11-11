@@ -44,18 +44,15 @@ class Login extends Component {
     render() {
         return (
             <div className='login-page'>
-                <div className='about-box'>
-                    This is TITLEHERE and we want to help you find the right dog for you and your needs!
-                </div>
                 <div className='auth-box'>
-                    <div>
+                    <div className='login-credentials'>
                         UserName:
                         <input
                             value={this.state.username}
                             name='username'
                             onChange={(e) => this.handleInput(e)} />
                     </div>
-                    <div>
+                    <div className='login-credentials'>
                         Password:
                         <input
                             value={this.state.password}

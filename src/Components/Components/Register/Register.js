@@ -46,14 +46,14 @@ class Register extends Component {
         return (
             <div className='register-page'>
                 <div className='auth-box'>
-                    <div>
+                    <div className='login-credentials'>
                         UserName:
                         <input
                             value={this.state.username}
                             name='username'
                             onChange={(e) => this.handleInput(e)} />
                     </div>
-                    <div>
+                    <div className='login-credentials'>
                         Password:
                         <input
                             value={this.state.password}

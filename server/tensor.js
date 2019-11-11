@@ -7,7 +7,8 @@ const trainingPractice = require('./trainingData.json');
 module.exports = {
     runModel: async (req, res) => {
         let {
-            results
+            results,
+            dogs
         } = req.body
         // console.log(req.body.results)
         // Connect Data base //
@@ -70,9 +71,29 @@ module.exports = {
         // train/fit our network
         const startTime = Date.now()
         model.fit(trainingData, outputData, { epochs: 100 })
-            .then((history) => {
+            .then(async(history) => {
                 console.log("DONE!", Date.now() - startTime)
                 model.predict(testingData).print()
+                let dogResults = await model.predict(testingData).data()
+                // console.log(dogResults)
+
+                // Function here to sort and display 
+                let sortedDogs = dogResults.sort(function (a, b) {
+                    return b - a;
+                });
+                console.log(sortedDogs)
+                let topThree = [];
+                for (let i = 0; i < 3; i++) {
+                    let index = dogResults.findIndex(dogs => dogs === sortedDogs[i])
+                    console.log("sortedDogs[i]", sortedDogs[i])
+                    console.log('dogs', dogs)
+                    console.log('index', index)
+                    topThree.push(index)
+                }
+                console.log(topThree)
+                res.status(200).send(topThree)
+
+
                 res.sendStatus(200);
             })
         // test network

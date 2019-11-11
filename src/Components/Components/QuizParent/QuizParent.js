@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 // This page is the layout for the quiz and will house all the questions //
 // Depending on the sequence they choose the questions
 // we will then project the top three choices for them using tensorFlow
-// import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {runModel} from '../../../ducks/reducer';
+
+// import routes below to use nested routing //
 import { Switch, Route } from 'react-router-dom';
 // Components
 import Quiz from '../Quiz/Quiz';
@@ -11,10 +14,8 @@ import QuizThree from '../QuizThree/QuizThree';
 
 
 // Style of Page below //
-// import './Quiz.css';
 import Header from '../Header/Header';
 import axios from 'axios';
-// import QuizThree from '../QuizThree/QuizThree';
 
 
 
@@ -39,7 +40,9 @@ class QuizParent extends Component {
 
     runModel = () => {
         let { results } = this.state
-        axios.post('/api/run', { results }).then(res => console.log('worked'))
+        this.props.runModel(results, this.props.dogs)
+        // this.props.history.push('')
+        
     }
 
     huntingDog = (value) => {
@@ -220,7 +223,7 @@ class QuizParent extends Component {
 
 
     render() {
-        // console.log(this.state)
+        console.log(this.props)
         return (
             <div>
                 <Header />
@@ -268,4 +271,15 @@ class QuizParent extends Component {
     }
 }
 
-export default QuizParent;
+const mapStateToProps = reduxState => {
+    const {dogs} = reduxState;
+    return {
+        dogs
+    }
+}
+
+const mapDispatchToProps = {
+    runModel
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuizParent);
