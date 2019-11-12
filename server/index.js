@@ -45,7 +45,7 @@ app.post('/api/getuser', mainCtrl.getUser)
 app.get('/api/dogs', newDogCtrl.getDogs);
 app.post('/api/newdog', newDogCtrl.newDog);
 app.post('/api/addtoaccount', newDogCtrl.addToAccount);
-app.get('/api/getaccountdogs', newDogCtrl.getAccountDogs);
+app.get('/api/getaccountdogs/:id', newDogCtrl.getAccountDogs);
 
 
 // Admin side to edit and delete dogs //

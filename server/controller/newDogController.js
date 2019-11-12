@@ -29,10 +29,11 @@ module.exports = {
 
     getAccountDogs: async (req, res) => {
         const db = req.app.get('db');
-        const {userId} = req.body;
+        const {id} = req.params;
+        // console.log('userid', req.session.user)
 
-        let myDogs = await db.get_account_dogs(userId)
+        let myDogs = await db.get_account_dogs(+id)
+        // console.log(myDogs)
             res.status(200).send(myDogs)
     }
-
 }

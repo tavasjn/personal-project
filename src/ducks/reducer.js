@@ -19,7 +19,6 @@ const UPDATE_USER = 'UPDATE_USER';
 const LOGOUT = 'LOGOUT';
 const ADDDOG = 'ADDDOG';
 const GETDOGS = 'GETDOGS';
-const ACCOUNTDOGS = 'ACCOUNTDOGS';
 const RUN_MODEL = 'RUN_MODEL';
 const GETACCOUNTDOGS = 'GETACCOUNTDOGS';
 
@@ -55,8 +54,16 @@ export function getDogs() {
     }
 }
 
-export function getAccountDogs() {
-    let myDogs = axios.get('/api/getaccountdogs').then(res => res.data)
+export function getAccountDogs(userId) {
+    // console.log('userid', userId)
+    // let myDogs = null;
+    const myDogs = axios.get(`/api/getaccountdogs/${userId}`).then(res => {
+        // await console.log(res.data)
+        return res.data
+        // console.log(myDogs)
+    })
+    .catch(err => console.log(err))
+    // console.log(myDogs)
 
     return {
         type: GETACCOUNTDOGS,
@@ -64,15 +71,6 @@ export function getAccountDogs() {
     }
 }
 
-export function accountDogs() {
-    // console.log('hit')
-    let myDogs = axios.get('/api/dogs').then(res => res.data)
-
-    return {
-        type: ACCOUNTDOGS,
-        payload: myDogs
-    }
-}
 
 export function addDog(dogs_id, userId) {
     // console.log(userId, dogs_id)
@@ -115,10 +113,12 @@ export default function reducer(state = initialState, action) {
             return { ...state, myDogs: [...state.myDogs, payload] }
         case GETDOGS + '_FULFILLED':
             return { ...state, dogs: payload }
-        case ACCOUNTDOGS:
-            return { ...state, myDogs: payload }
         case RUN_MODEL + '_FULFILLED':
             return { ...state, results: [payload] }
+        case GETACCOUNTDOGS + '_PENDING':
+            return { ...state}
+        case GETACCOUNTDOGS + '_FULFILLED':
+            return { ...state, myDogs: payload}
         default:
             return state;
     }
