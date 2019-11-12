@@ -28,12 +28,16 @@ class Account extends Component {
 
 
     render() {
-        console.log(this.props.redux.myDogs)
+        console.log(this.props.redux.user)
+        let {username} = this.props.redux.user
         let { myDogs } = this.props.redux;
         return (
             <div>
                 <Header />
                 <div className='account-page'>
+                    <div>
+                        Username: {username}
+                    </div>
                     <div>
                         Your Saved Dogs Below
                     </div>
@@ -42,7 +46,9 @@ class Account extends Component {
                             {myDogs.map((myDogs, index) => (
                                 <AccountDogs
                                     myDogs={myDogs}
-                                    index={index} />
+                                    // index={index}
+                                    key={`dogs: ${index}`}
+                                />
                             ))}
                         </div>
                     </div>

@@ -4,9 +4,24 @@ import {Link} from 'react-router-dom';
 
 // Css below
 import './Header.css';
+import Axios from 'axios';
+
+import {connect} from 'react-redux';
+import {updateUser} from '../../../ducks/reducer';
 
 
 class Header extends Component {
+
+    componentDidMount() {
+        Axios.post('/api/getuser').then(res => {
+            if(!res.data.cookie){
+                console.log(res.data)
+                this.props.updateUser(res.data);
+            }
+        })
+        .catch(err => console.log(err));
+    }
+
     render() {
         return (
             <div className='nav-bar'>
@@ -27,4 +42,8 @@ class Header extends Component {
     }
 }
 
-export default Header;
+const mapDispatchToProps = {
+    updateUser
+}
+
+export default connect(null, mapDispatchToProps)(Header);

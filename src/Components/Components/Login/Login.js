@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateUser } from '../../../ducks/reducer';
-import { login } from '../../../ducks/reducer';
 import './Login.css';
 
 class Login extends Component {
@@ -82,8 +81,7 @@ const mapStateToProps = reduxState => {
 }
 
 const mapDispatchToProps = {
-    updateUser,
-    login
+    updateUser
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

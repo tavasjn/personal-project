@@ -22,15 +22,9 @@ module.exports = {
 
     addToAccount: (req, res) => {
         const db = req.app.get('db');
-        const { breed, size, indoor_outdoor, hunting, playful, hypoallergenic, fur_type, description, image } = req.body;
+        const { userId, dogs_id} = req.body;
 
-        db.add_to_account([breed, size, indoor_outdoor, hunting, playful, hypoallergenic, fur_type, description, image]).then(data => res.status(200).send(data))
-    },
-
-    getAccountDogs: async(req, res) => {
-        const db = req.app.get('db');
-
-        req.session.myDogs = myDogs;
-
+        db.add_to_account(userId, dogs_id).then(data => res.status(200).send(data))
     }
+
 }

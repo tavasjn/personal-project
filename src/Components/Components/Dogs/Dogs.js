@@ -18,7 +18,8 @@ class Dogs extends Component {
     // make another function that adds dog to redux
     render() {
         let { dogs } = this.props;
-        // console.log(dogs)
+        let { user } = this.props.redux;
+        // console.log(this.props.redux.user)
         // console.log(this.props)
         // console.log(this.props.redux.myDogs)
         return (
@@ -28,7 +29,7 @@ class Dogs extends Component {
                     <img src={dogs.image} alt='' className='dog-image' />
                     <div>Size: {dogs.size}</div>
                     {dogs.hypoallergenic ? (<div>Hypoallergenic: Yes</div>) : (<div>Hypoallergenic: No</div>)}
-                    <div>Add to the list: <button onClick={(e) => this.props.addDog(dogs.dogs_id, this.props.index)} className='add-button'>Add</button></div>
+                    <div>Add to the list: <button onClick={(e) => this.props.addDog(dogs.dogs_id, user.user_id)} className='add-button'>Add</button></div>
                 </div>
             </div>
         )

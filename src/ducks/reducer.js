@@ -17,7 +17,6 @@ const initialState = {
 
 const UPDATE_USER = 'UPDATE_USER';
 const LOGOUT = 'LOGOUT';
-const LOGIN = 'LOGIN';
 const ADDDOG = 'ADDDOG';
 const GETDOGS = 'GETDOGS';
 const ACCOUNTDOGS = 'ACCOUNTDOGS';
@@ -33,13 +32,13 @@ export function runModel(
         results,
         dogs
     }).then(res => {
-        console.log(res)
+        // console.log(res)
         return res.data
-})
-return {
-    type: RUN_MODEL,
-    payload: data
-}
+    })
+    return {
+        type: RUN_MODEL,
+        payload: data
+    }
 }
 
 
@@ -64,16 +63,17 @@ export function accountDogs() {
     }
 }
 
-export function addDog(myDogs, index) {
+export function addDog(dogs_id, userId) {
+    console.log(userId, dogs_id)
     // map over dogs to find matching dog id //
-    // console.log(myDogs)
     // console.log('hit')
-
+    let myDogs = axios.post('/api/addtoaccount', {userId, dogs_id}).then(async res => await res.data)
     // send dog on payload //
     // use payload to push to myDogs []; //
+    console.log(myDogs)
     return {
         type: ADDDOG,
-        payload: { myDogs, index }
+        payload: { myDogs }
     }
 }
 
@@ -92,31 +92,16 @@ export function logout() {
     }
 }
 
-export function login() {
-    return {
-        type: LOGIN,
-        payload: null
-    }
-}
 
 export default function reducer(state = initialState, action) {
     const { type, payload } = action;
     switch (type) {
         case UPDATE_USER:
-            return { ...state, user: { payload, signedIn: true } }
+            return { ...state, user: { ...payload, signedIn: true } }
         case LOGOUT:
             return { ...state, user: { signedIn: false } }
-        case LOGIN:
-            return { ...state, user: { signedIn: true } }
         case ADDDOG:
-            // console.log(payload)
-            let dog = state.dogs.map((element) => {
-                if (element.dogs_id === +payload.myDogs) {
-                    return element
-                }
-            })
-            // console.log(dog[payload.index])
-            return { ...state, myDogs: [...state.myDogs, dog[payload.index]] }
+            return { ...state, myDogs: [...state.myDogs, payload] }
         case GETDOGS + '_FULFILLED':
             return { ...state, dogs: payload }
         case ACCOUNTDOGS:

@@ -38,11 +38,15 @@ app.use(session({
 app.post('/api/login', mainCtrl.login);
 app.post('/api/register', mainCtrl.register);
 app.post('/api/logout', mainCtrl.logout);
+app.post('/api/getuser', mainCtrl.getUser)
+
 
 // CTRL for adding Dogs //
 app.get('/api/dogs', newDogCtrl.getDogs);
 app.post('/api/newdog', newDogCtrl.newDog);
 app.post('/api/addtoaccount', newDogCtrl.addToAccount);
+// app.post('/api/addtopdog', newDogCtrl.addTopDog);
+
 
 // Admin side to edit and delete dogs //
 app.delete('/api/deletedog/:id', adminCtrl.deleteDog);

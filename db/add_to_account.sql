@@ -1,4 +1,11 @@
-select * from users
-join users_dogs on users_dogs.user_id = users.user_id
-join dogs on dogs.dogs_id = users_dogs.dogs_id
-where users.user_id = $1
+-- select *
+-- from users_dogs ud
+-- join users u on ud.user_id = u.user_id; 
+
+insert into users_dogs (
+    user_id,
+    dogs_id
+) values (
+    $1,
+    $2
+);
