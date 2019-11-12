@@ -54,10 +54,10 @@ class QuizResults extends Component {
 
 
     render() {
-        console.log(this.props.redux.myDogs)
-        console.log(this.state.dogs)
+        // console.log(this.props.redux.myDogs)
+        // console.log(this.state.dogs)
         // console.log(this.props.redux.results)
-        console.log(this.state)
+        // console.log(this.state)
         return (
             <div>
                 <Header />

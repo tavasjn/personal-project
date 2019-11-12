@@ -6,7 +6,7 @@ import './AccountDogs.css';
 
 // redux import below
 import { connect } from 'react-redux';
-import { accountDogs } from '../../../ducks/reducer';
+import { accountDogs, getAccountDogs } from '../../../ducks/reducer';
 
 
 
@@ -15,6 +15,7 @@ class AccountDogs extends Component {
 
     componentDidMount() {
         this.props.accountDogs()
+        this.props.getAccountDogs()
     }
 
 
@@ -22,8 +23,8 @@ class AccountDogs extends Component {
     // make another function that adds dog to redux
     render() {
         let { myDogs } = this.props;
-        // console.log(dogs)
-        console.log(this.props)
+        // console.log(getAccountDogs)
+        // console.log(this.props)
         // console.log(this.props.redux.myDogs)
         return (
             <div>
@@ -45,7 +46,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    accountDogs
+    accountDogs,
+    getAccountDogs
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountDogs);

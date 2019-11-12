@@ -21,6 +21,8 @@ const ADDDOG = 'ADDDOG';
 const GETDOGS = 'GETDOGS';
 const ACCOUNTDOGS = 'ACCOUNTDOGS';
 const RUN_MODEL = 'RUN_MODEL';
+const GETACCOUNTDOGS = 'GETACCOUNTDOGS';
+
 
 
 export function runModel(
@@ -53,6 +55,15 @@ export function getDogs() {
     }
 }
 
+export function getAccountDogs() {
+    let myDogs = axios.get('/api/getaccountdogs').then(res => res.data)
+
+    return {
+        type: GETACCOUNTDOGS,
+        payload: myDogs
+    }
+}
+
 export function accountDogs() {
     // console.log('hit')
     let myDogs = axios.get('/api/dogs').then(res => res.data)
@@ -64,13 +75,13 @@ export function accountDogs() {
 }
 
 export function addDog(dogs_id, userId) {
-    console.log(userId, dogs_id)
+    // console.log(userId, dogs_id)
     // map over dogs to find matching dog id //
     // console.log('hit')
     let myDogs = axios.post('/api/addtoaccount', {userId, dogs_id}).then(async res => await res.data)
     // send dog on payload //
     // use payload to push to myDogs []; //
-    console.log(myDogs)
+    // console.log(myDogs)
     return {
         type: ADDDOG,
         payload: { myDogs }

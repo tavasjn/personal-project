@@ -13,7 +13,7 @@ module.exports = {
         // Connect Data base //
         const db = req.app.get('db')
         let dogs = await db.get_dogs()
-        console.log(dogs)
+        // console.log(dogs)
         // set the empty array to use //
 
         // now we build the run model for the tensorflow data //

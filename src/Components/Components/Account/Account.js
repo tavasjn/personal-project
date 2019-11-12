@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 
 // importing redux and our reducer
 import { connect } from 'react-redux';
-import { accountDogs } from '../../../ducks/reducer';
+import { accountDogs, getAccountDogs } from '../../../ducks/reducer';
 
 // import our component to display each dog you have saved 
 import AccountDogs from '../AccountDogs/AccountDogs';
@@ -17,6 +17,7 @@ class Account extends Component {
 
     componentDidMount() {
         this.props.accountDogs()
+        this.props.getAccountDogs()
     }
 
     // us a axios.get to get my dogs from redux
@@ -28,7 +29,7 @@ class Account extends Component {
 
 
     render() {
-        console.log(this.props.redux.user)
+        console.log(this.props.redux)
         let {username} = this.props.redux.user
         let { myDogs } = this.props.redux;
         return (
@@ -66,7 +67,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    accountDogs
+    accountDogs,
+    getAccountDogs
 }
 
 

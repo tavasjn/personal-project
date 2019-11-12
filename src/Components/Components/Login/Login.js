@@ -21,7 +21,7 @@ class Login extends Component {
     }
 
     handleLogin = () => {
-        console.log('hit')
+        // console.log('hit')
         axios.post('/api/login', { username: this.state.username, password: this.state.password }).then(res => {
             this.props.updateUser(res.data)
             this.props.history.push('/home')

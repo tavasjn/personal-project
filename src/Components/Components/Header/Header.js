@@ -15,7 +15,7 @@ class Header extends Component {
     componentDidMount() {
         Axios.post('/api/getuser').then(res => {
             if(!res.data.cookie){
-                console.log(res.data)
+                // console.log(res.data)
                 this.props.updateUser(res.data);
             }
         })

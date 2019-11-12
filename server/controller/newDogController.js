@@ -25,6 +25,14 @@ module.exports = {
         const { userId, dogs_id} = req.body;
 
         db.add_to_account(userId, dogs_id).then(data => res.status(200).send(data))
+    },
+
+    getAccountDogs: async (req, res) => {
+        const db = req.app.get('db');
+        const {userId} = req.body;
+
+        let myDogs = await db.get_account_dogs(userId)
+            res.status(200).send(myDogs)
     }
 
 }
