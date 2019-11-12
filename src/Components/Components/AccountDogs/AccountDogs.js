@@ -18,7 +18,7 @@ class AccountDogs extends Component {
     render() {
         let { myDogs } = this.props;
         // console.log(getAccountDogs)
-        console.log(this.props)
+        // console.log(this.props)
         // console.log(this.props.redux.myDogs)
         return (
             <div>

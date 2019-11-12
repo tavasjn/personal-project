@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header';
 import './Landing.css';
+import Footer from '../Footer/Footer';
 import SadDog from '../../../sad_dog.jpg';
 import SadDog2 from '../../../sad_dog_2.webp';
 
@@ -27,6 +28,7 @@ class Landing extends Component {
                         <img src={SadDog2} alt='' className='dog-images'/>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

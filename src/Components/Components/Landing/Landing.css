@@ -1,11 +1,12 @@
 .home-page{
-    color: #86c232;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
+    /* margin-bottom: 8vh;
+    margin-top: 10vh; */
 }
 
 .dog-facts{

@@ -1,6 +1,5 @@
 
 .findDog-page{
-    color: #86c232;
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -25,7 +24,7 @@
 .quiz-button {
     border-radius: 5px;
     border: none;
-    background-color: #86c232;
+    background-color: #b2ffb2;
     padding: 10px 15px;
 }
 

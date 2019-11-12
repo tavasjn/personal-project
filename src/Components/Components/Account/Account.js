@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // these are for styling purposes
 import './Account.css';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 // importing redux and our reducer
 import { connect } from 'react-redux';
@@ -69,6 +70,7 @@ class Account extends Component {
                     </div>
 
                 </div>
+                <Footer />
             </div>
         )
     }

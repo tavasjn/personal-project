@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 
 // What we are routing // 
 import Account from './Components/Components/Account/Account';
-import FindDog from './Components/Components/FindDog/FindDog';
+// import FindDog from './Components/Components/FindDog/FindDog';
 import Landing from './Components/Components/Landing/Landing';
 import Login from './Components/Components/Login/Login';
 import Quiz from './Components/Components/Quiz/Quiz';
@@ -25,7 +25,6 @@ export default (
         <Route path='/home' component={Landing} />
         <Route path='/account' component={Account} />
         <Route path='/register' component={Register} />
-        <Route path='/finddog' component={FindDog} />
         <Route path='/quizresults' component={QuizResults} />
         <Route path='/alldogs' component={AllDogs} />
         <Route path='/dogs' component={Dogs} />

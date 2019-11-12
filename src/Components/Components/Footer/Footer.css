@@ -1,0 +1,10 @@
+.footer{
+    height: 8vh;
+    width: 100vw;
+    background-color: #b2ffb2;
+    position: bottom 0;
+}
+
+.logout {
+    height: 5vh;
+}

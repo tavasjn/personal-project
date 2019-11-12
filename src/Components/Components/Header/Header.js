@@ -32,7 +32,7 @@ class Header extends Component {
                     <Link to='/account'><button className='nav-buttons'>My Account</button></Link>
                 </div>
                 <div>
-                    <Link to='/finddog'><button className='nav-buttons'>Find a Dog</button></Link>
+                    <Link to='/quiz/step-one'><button className='nav-buttons'>Find a Dog</button></Link>
                 </div>
                 <div>
                     <Link to='/alldogs'><button className='nav-buttons'>Explore All Dogs</button></Link>
