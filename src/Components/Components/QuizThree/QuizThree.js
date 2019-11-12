@@ -7,13 +7,22 @@ import React, { Component } from 'react';
 // Style of Page below //
 // import Header from '../Header/Header';
 // import axios from 'axios';
+// import {connect} from 'react-redux';
+// import {getDogs} from '../../../ducks/reducer';
 
 
 
 class QuizThree extends Component {
 
+    // componentDidMount() {
+    //     this.props.getDogs()
+
+    // }
+
+
     render(props) {
-        console.log(this.props)
+        // console.log(this.props.dogs)
+        // console.log(this.props.topThree)
         return (
             <div>
                 {/* <Header /> */}
@@ -57,5 +66,15 @@ class QuizThree extends Component {
         )
     }
 }
+
+// const mapStateToProps = state => {
+//     return {
+//         redux: state
+//     }
+// }
+
+// const mapDispatchToProps = {
+//     getDogs
+// }
 
 export default QuizThree;

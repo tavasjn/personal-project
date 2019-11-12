@@ -15,7 +15,7 @@ import QuizThree from '../QuizThree/QuizThree';
 
 // Style of Page below //
 import Header from '../Header/Header';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 
@@ -38,10 +38,10 @@ class QuizParent extends Component {
         }
     }
 
-    runModel = () => {
+    runModel = async() => {
         let { results } = this.state
-        this.props.runModel(results, this.props.dogs)
-        // this.props.history.push('')
+        await this.props.runModel(results, this.props.dogs)
+        await this.props.history.push('/quizresults')
         
     }
 
@@ -223,7 +223,7 @@ class QuizParent extends Component {
 
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div>
                 <Header />

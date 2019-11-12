@@ -32,11 +32,14 @@ export function runModel(
     let data = axios.post('/api/run', {
         results,
         dogs
-    }).then(res => res.data)
-    return {
-        type: RUN_MODEL,
-        payload: data
-    }
+    }).then(res => {
+        console.log(res)
+        return res.data
+})
+return {
+    type: RUN_MODEL,
+    payload: data
+}
 }
 
 
@@ -117,9 +120,9 @@ export default function reducer(state = initialState, action) {
         case GETDOGS + '_FULFILLED':
             return { ...state, dogs: payload }
         case ACCOUNTDOGS:
-            return {...state, myDogs: payload}
+            return { ...state, myDogs: payload }
         case RUN_MODEL + '_FULFILLED':
-            return {...state, results: [payload]}
+            return { ...state, results: [payload] }
         default:
             return state;
     }

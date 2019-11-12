@@ -8,11 +8,12 @@ module.exports = {
     runModel: async (req, res) => {
         let {
             results,
-            dogs
         } = req.body
         // console.log(req.body.results)
         // Connect Data base //
         const db = req.app.get('db')
+        let dogs = await db.get_dogs()
+        console.log(dogs)
         // set the empty array to use //
 
         // now we build the run model for the tensorflow data //
@@ -78,19 +79,20 @@ module.exports = {
                 // console.log(dogResults)
 
                 // Function here to sort and display 
-                let sortedDogs = dogResults.sort(function (a, b) {
+                let sortedDogs = [...dogResults]
+                sortedDogs.sort(function (a, b) {
                     return b - a;
                 });
-                console.log(sortedDogs)
+                // console.log(sortedDogs)
                 let topThree = [];
                 for (let i = 0; i < 3; i++) {
                     let index = dogResults.findIndex(dogs => dogs === sortedDogs[i])
-                    console.log("sortedDogs[i]", sortedDogs[i])
-                    console.log('dogs', dogs)
-                    console.log('index', index)
+                    // console.log("sortedDogs[i]", sortedDogs[i])
+                    // console.log('dogs', dogs)
+                    // console.log('index', index)
                     topThree.push(index)
                 }
-                console.log(topThree)
+                // console.log(topThree)
                 res.status(200).send(topThree)
 
 

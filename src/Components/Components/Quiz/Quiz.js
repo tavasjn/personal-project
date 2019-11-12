@@ -14,7 +14,7 @@ import './Quiz.css';
 class Quiz extends Component {
     
     render(props) {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div>
                 {/* <Header /> */}

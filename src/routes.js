@@ -26,6 +26,9 @@ export default (
         <Route path='/account' component={Account} />
         <Route path='/register' component={Register} />
         <Route path='/finddog' component={FindDog} />
+        <Route path='/quizresults' component={QuizResults} />
+        <Route path='/alldogs' component={AllDogs} />
+        <Route path='/dogs' component={Dogs} />
         <Route path='/quiz' component={QuizParent} />
         <Switch>
             <Route path='/quiz' component={QuizParent} />
@@ -33,8 +36,5 @@ export default (
             <Route path='/quiz/step-two' component={QuizTwo} />
             <Route path='/quiz/step-three' component={QuizThree} />
         </Switch>
-        <Route path='/quizresults' component={QuizResults} />
-        <Route path='/alldogs' component={AllDogs} />
-        <Route path='/dogs' component={Dogs} />
     </Switch>
 )
