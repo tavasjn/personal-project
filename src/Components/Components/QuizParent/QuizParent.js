@@ -45,6 +45,10 @@ class QuizParent extends Component {
         
     }
 
+    resetState = () => {
+        
+    }
+
     huntingDog = (value) => {
         // console.log(value)
         let obj = this.state.results[0]

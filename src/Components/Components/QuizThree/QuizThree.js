@@ -21,7 +21,7 @@ class QuizThree extends Component {
 
 
     render(props) {
-        // console.log(this.props.dogs)
+        console.log(this.props)
         // console.log(this.props.topThree)
         return (
             <div>
@@ -59,7 +59,9 @@ class QuizThree extends Component {
                         </div>
                     </div>
                     <div>
-                        <button className='finish-quiz-button' onClick={this.props.runModel}>Complete</button>
+                        <button className='finish-quiz-button' onClick={this.props.runModel}
+                                
+                        >Complete</button>
                     </div>
                 </div>
             </div>
