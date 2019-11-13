@@ -39,6 +39,7 @@ app.post('/api/login', mainCtrl.login);
 app.post('/api/register', mainCtrl.register);
 app.post('/api/logout', mainCtrl.logout);
 app.post('/api/getuser', mainCtrl.getUser)
+app.put('/api/updateusername/:id', mainCtrl.updateUsername);
 
 
 // CTRL for adding Dogs //

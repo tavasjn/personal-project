@@ -21,6 +21,7 @@ const ADDDOG = 'ADDDOG';
 const GETDOGS = 'GETDOGS';
 const RUN_MODEL = 'RUN_MODEL';
 const GETACCOUNTDOGS = 'GETACCOUNTDOGS';
+const UPDATEUSERNAME = 'UPDATEUSERNAME';
 
 
 
@@ -42,6 +43,15 @@ export function runModel(
     }
 }
 
+export function updateUsername(userId, newName){
+    // let { username } = this.props.redux.user;
+    axios.put(`/api/updateusername/${userId}`, { newName }).then(res => res.data)
+
+    return {
+        type: UPDATEUSERNAME,
+        payload: newName
+    }
+}
 
 
 export function getDogs() {
@@ -62,7 +72,7 @@ export function getAccountDogs(userId) {
         return res.data
         // console.log(myDogs)
     })
-    .catch(err => console.log(err))
+        .catch(err => console.log(err))
     // console.log(myDogs)
 
     return {
@@ -76,7 +86,7 @@ export function addDog(dogs_id, userId) {
     // console.log(userId, dogs_id)
     // map over dogs to find matching dog id //
     // console.log('hit')
-    let myDogs = axios.post('/api/addtoaccount', {userId, dogs_id}).then(async res => await res.data)
+    let myDogs = axios.post('/api/addtoaccount', { userId, dogs_id }).then(async res => await res.data)
     // send dog on payload //
     // use payload to push to myDogs []; //
     // console.log(myDogs)
@@ -116,9 +126,11 @@ export default function reducer(state = initialState, action) {
         case RUN_MODEL + '_FULFILLED':
             return { ...state, results: [payload] }
         case GETACCOUNTDOGS + '_PENDING':
-            return { ...state}
+            return { ...state }
         case GETACCOUNTDOGS + '_FULFILLED':
-            return { ...state, myDogs: payload}
+            return { ...state, myDogs: payload }
+        case UPDATEUSERNAME:
+            return {...state, user: {username: payload}}
         default:
             return state;
     }

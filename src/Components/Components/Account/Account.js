@@ -7,29 +7,32 @@ import Footer from '../Footer/Footer';
 
 // importing redux and our reducer
 import { connect } from 'react-redux';
-import { getAccountDogs } from '../../../ducks/reducer';
+import { getAccountDogs, updateUsername } from '../../../ducks/reducer';
 
 // import our component to display each dog you have saved 
 import AccountDogs from '../AccountDogs/AccountDogs';
+import axios from 'axios';
 
 
 
 class Account extends Component {
 
-    constructor(){
+    constructor() {
         super();
 
         this.state = {
-            myDogs: {}
+            myDogs: {},
+            newUsername: '',
+            changeUsername: false
         }
     }
-    
 
-    
+
+
     componentDidMount() {
         let userId = this.props.redux.user.user_id
         // console.log(this.props.redux.user.user_id)
-        if(this.props.redux.user.user_id && this.props.redux.myDogs !== []){
+        if (this.props.redux.user.user_id && this.props.redux.myDogs !== []) {
             this.props.getAccountDogs(userId)
         }
         // console.log(this.props)
@@ -43,16 +46,27 @@ class Account extends Component {
 
 
 
+
     render() {
-        // console.log(this.props.redux)
-        let {username} = this.props.redux.user;
+        // console.log(this.props.redux.user.user_id)
+        const userId = this.props.redux.user.user_id;
+        let { username } = this.props.redux.user;
         let { myDogs } = this.props.redux;
         return (
             <div>
                 <Header />
                 <div className='account-page'>
-                    <div>
-                        Username: {username}
+                    <div className='edit-username'>
+                        <div>Username: {username}</div>
+                        <button className='edit' onClick={() => this.setState({ changeUsername: true })}>Change Username</button>
+                    </div>
+                    <div className={this.state.changeUsername ? '' : 'hidden'}>
+                        <input name='newUsername' onChange={(e) => this.setState({ [e.target.name]: e.target.value })} />
+                        <button onClick={() => {
+                            this.props.updateUsername(userId, this.state.newUsername)
+                            this.setState({newUsername: ''})
+                            this.setState({changeUsername: false})
+                        }}>Save</button>
                     </div>
                     <div>
                         Your Saved Dogs Below
@@ -83,7 +97,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    getAccountDogs
+    getAccountDogs,
+    updateUsername
 }
 
 

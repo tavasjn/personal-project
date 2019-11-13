@@ -62,5 +62,14 @@ module.exports = {
             return res.status(200).send(req.session.user);
         }
         res.status(200).send(req.session)
+    },
+
+    updateUsername: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params;
+        const {newName} = req.body;
+
+        db.update_username(id, newName)
+            .then(data => res.status(200).send(data))
     }
 }
