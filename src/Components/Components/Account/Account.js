@@ -11,7 +11,6 @@ import { getAccountDogs, updateUsername } from '../../../ducks/reducer';
 
 // import our component to display each dog you have saved 
 import AccountDogs from '../AccountDogs/AccountDogs';
-import axios from 'axios';
 
 
 

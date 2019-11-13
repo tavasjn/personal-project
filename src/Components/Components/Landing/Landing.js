@@ -20,10 +20,10 @@ class Landing extends Component {
                         Only 1 dog out of 10 will find a permanent home.
                         Approximately 3.9 million dogs end up in a shelter every year.
                     </div>
-                    <div className='dog-facts'>
+                    {/* <div className='dog-facts'>
                         This app is designed to give you an interest in dogs and finding a dog that is just right for you.
                         To help motivate you to adopt a dog into your home and family.
-                    </div>
+                    </div> */}
                     <div className='dog-facts'>
                         <img src={SadDog2} alt='' className='dog-images'/>
                     </div>
