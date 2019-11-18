@@ -64,13 +64,7 @@ app.delete('/api/deletedog/:id', adminCtrl.deleteDog);
 app.post('/api/run', tensor.runModel);
 
 
-const path = require('path'); // Usually moved to the start of file
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/index.html'));
-});
-
-
+app.use( express.static( `${__dirname}/../build` ) );
 
 const port = SERVER_PORT;
 app.listen(port, () => console.log(`Magic on Port: ${port}`));
