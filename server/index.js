@@ -15,14 +15,14 @@ const tensor = require('./tensor');
 
 
 // connect the server using heroku // 
-const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 const app = express();
 
 
 app.use(express.json());
 
-app.use(express.json({limit: '100mb'}));
-app.use(express.urlencoded({limit: '100mb', extended: true}));
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ limit: '100mb', extended: true }));
 
 // Connect to the data base //
 massive(CONNECTION_STRING).then(db => {
@@ -64,6 +64,11 @@ app.delete('/api/deletedog/:id', adminCtrl.deleteDog);
 app.post('/api/run', tensor.runModel);
 
 
+const path = require('path'); // Usually moved to the start of file
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 
 
