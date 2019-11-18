@@ -8,12 +8,127 @@
     /* position: fixed; */
 }
 
-.nav-buttons{
-    /* border: solid black 1px; */
-    /* border-radius: 2px; */
-    /* background-color: #B70000; */
+/* .nav-buttons{
+    width: 100%;
+    border: solid black 1px;
     border-radius: 5px;
     border: none;
-    background-color: #f3f3f3;
+    background-color: transparent;
     padding: 5px;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+#hamburger-icon {
+    /* color: white; */
+    /* background-color: #fed136; */
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    margin-right: 25px;
+  }
+  
+  .menubutton{
+    background-color: #b2ffb2;
+    display: flex;
+    margin-right: 25px;
+    color: black;
+  }
+  
+  
+  .menu-bar{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  
+  .menu-items{
+    color: black;
+    margin-right: 15px;
+    
+  }
+  
+  .dropdown {
+    /* right: 0; */
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    color: white;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: left;
+    align-items: left;
+    border-bottom-left-radius: 6px;
+    
+  }
+  
+  .dropdown-menu-items{
+    margin-left: 50px;
+  }
+  
+  
+  .hide-animation {
+    animation-name: hide;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  .show-animation {
+    animation-name: show;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  
+  
+  @keyframes show {
+    0% {
+      height: 0px;
+    }
+    100% {
+      height: 100px;
+    }
+  }
+  
+  @keyframes hide {
+    0% {
+      height: 100px;
+    }
+    100% {
+      height: 0px;
+    }
+  }
+  
+  @media (min-width: 700px) {
+    #hamburger-icon, .dropdown, p {
+      display: none;
+    }
+    header {
+      background: transparent;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .menu-bar {
+      display: none;
+    }
+    header, .dropdown {
+      background-color: #b2ffb2;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 700px){
+    .menu-bar {
+      display: none;
+    }
+    header, .dropdown {
+      background-color: #b2ffb2;
+    }
+  }

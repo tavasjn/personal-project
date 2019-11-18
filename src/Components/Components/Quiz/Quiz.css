@@ -1,74 +1,153 @@
-.quiz-body-page {
-    height: 90vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+@media(max-width: 500px){
+    .quiz-body-page {
+        height: 90vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    .quiz-buttons {
+        border-radius: 5px;
+        border: none;
+        background-color: #b2ffb2;
+        padding: 10px 15px;
+    }
+    
+    .quiz-page-spreading {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .question-box {
+        border: solid black 2px;
+        height: 15vh;
+        width: 60vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .question {
+        text-align: center;
+    }
+    
+    .finish-quiz-button {
+        border-radius: 5px;
+        border: none;
+        background-color: #b2ffb2;
+        padding: 10px 15px;
+    }
+    
+    
+    /* 
+    This is for the size question
+    because this has the most options we need a bigger sized box
+     */
+    
+    .quiz-buttons-size {
+        border-radius: 5px;
+        border: none;
+        background-color: #b2ffb2;
+        padding: 10px 15px;
+    }
+    
+    .quiz-page-spreading-size {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    .question-box-size {
+        border: solid black 2px;
+        height: 45vh;
+        width: 60vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .question-size {
+        text-align: center;
+    }
 }
 
-.quiz-buttons {
-    border-radius: 5px;
-    border: none;
-    background-color: #b2ffb2;
-    padding: 10px 15px;
-}
-
-.quiz-page-spreading {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.question-box {
-    border: solid black 2px;
-    height: 15vh;
-    width: 60vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.question {
-    text-align: center;
-}
-
-.finish-quiz-button {
-    border-radius: 5px;
-    border: none;
-    background-color: #b2ffb2;
-    padding: 10px 15px;
-}
-
-
-/* 
-This is for the size question
-because this has the most options we need a bigger sized box
- */
-
-.quiz-buttons-size {
-    border-radius: 5px;
-    border: none;
-    background-color: #b2ffb2;
-    padding: 10px 15px;
-}
-
-.quiz-page-spreading-size {
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.question-box-size {
-    border: solid black 2px;
-    height: 45vh;
-    width: 60vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.question-size {
-    text-align: center;
+@media(min-width: 700px){
+    .quiz-body-page {
+        height: 90vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    .quiz-buttons {
+        border-radius: 5px;
+        border: none;
+        background-color: #b2ffb2;
+        padding: 10px 15px;
+    }
+    
+    .quiz-page-spreading {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .question-box {
+        border: solid black 2px;
+        height: 15vh;
+        width: 25vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .question {
+        text-align: center;
+    }
+    
+    .finish-quiz-button {
+        border-radius: 5px;
+        border: none;
+        background-color: #b2ffb2;
+        padding: 10px 15px;
+    }
+    
+    
+    /* 
+    This is for the size question
+    because this has the most options we need a bigger sized box
+     */
+    
+    .quiz-buttons-size {
+        border-radius: 5px;
+        border: none;
+        background-color: #b2ffb2;
+        padding: 10px 15px;
+    }
+    
+    .quiz-page-spreading-size {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    
+    .question-box-size {
+        border: solid black 2px;
+        height: 45vh;
+        width: 25vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .question-size {
+        text-align: center;
+    }
 }

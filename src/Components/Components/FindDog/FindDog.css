@@ -1,30 +1,62 @@
-
-.findDog-page{
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+@media(max-width: 500px){
+    .findDog-page{
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .find-dog-page{
+        height: 35vh;
+        width: 50vw;
+        border: solid black 2px;
+        /* margin-top: 7%; */
+    }
+    
+    .find-dog-buttons{
+        width: 100vw;
+        display: flex;
+        justify-content: space-evenly;
+    
+    }
+    
+    .quiz-button {
+        border-radius: 5px;
+        border: none;
+        background-color: #b2ffb2;
+        padding: 10px 15px;
+    }
 }
 
-.find-dog-page{
-    height: 35vh;
-    width: 50vw;
-    border: solid black 2px;
-    /* margin-top: 7%; */
-}
-
-.find-dog-buttons{
-    width: 100vw;
-    display: flex;
-    justify-content: space-evenly;
-
-}
-
-.quiz-button {
-    border-radius: 5px;
-    border: none;
-    background-color: #b2ffb2;
-    padding: 10px 15px;
+@media(min-width: 700px){
+    .findDog-page{
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .find-dog-page{
+        height: 35vh;
+        width: 50vw;
+        border: solid black 2px;
+        /* margin-top: 7%; */
+    }
+    
+    .find-dog-buttons{
+        width: 100vw;
+        display: flex;
+        justify-content: space-evenly;
+    
+    }
+    
+    .quiz-button {
+        border-radius: 5px;
+        border: none;
+        background-color: #b2ffb2;
+        padding: 10px 15px;
+    }
 }
 
